@@ -23,10 +23,10 @@ services:
       CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
       CFG_FORWARDING_SECRET_FILE: "/run/secrets/forwarding_secret"
     volumes:
-      - data/proxy/config:/config:rw
-      - data/proxy/plugins.txt:/extras/plugins.txt
-      - data/proxy/forwarding.secret:/server/forwarding.secret:rw
-      - data/proxy/velocity.toml:/server/velocity.toml:rw
+      - ./data/proxy/config:/config:rw
+      - ./data/proxy/plugins.txt:/extras/plugins.txt
+      - ./data/proxy/forwarding.secret:/server/forwarding.secret:rw
+      - ./data/proxy/velocity.toml:/server/velocity.toml:rw
     restart: always
 
   lobby_1:
@@ -53,7 +53,7 @@ services:
       CFG_DB_REDIS_USERNAME: "default"
       CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
     volumes:
-      - data/lobby_1/config:/data/config:rw
+      - ./data/lobby_1/config:/data/config:rw
     restart: always
 
 secrets:

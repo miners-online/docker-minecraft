@@ -72,20 +72,20 @@ enable-player-address-logging = true
 [servers]
 # Configure your servers here. Each key represents the server's name, and the value
 # represents the IP address of the server to connect to.
-lobby = "lobby:25565"
+lobby_1 = "lobby_1:25565"
 modded-creative = "10.0.0.12:25566"
 modded-survival = "10.0.0.12:25567"
 testing = "testing:25565"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
 try = [
-    "lobby"
+    "lobby_1"
 ]
 
 [forced-hosts]
 # Configure your forced hosts here.
 "localhost" = [
-    "lobby"
+    "lobby_1"
 ]
 
 [advanced]

@@ -29,7 +29,7 @@ services:
       - ./data/proxy/velocity.toml:/server/velocity.toml:rw
     restart: always
 
-  lobby_1:
+  lobby-1:
     image: itzg/minecraft-server:latest
     environment:
       EULA: TRUE
@@ -39,8 +39,8 @@ services:
       DIFFICULTY: peaceful
       USE_AIKAR_FLAGS: true
       ONLINE_MODE: false
-      MODPACK: http://10.0.0.12:82/server_setup/lobby_1/mods.zip
-      WORLD: http://10.0.0.12:82/server_setup/lobby_1/world.tar.gz
+      MODPACK: http://10.0.0.12:82/server_setup/lobby-1/mods.zip
+      WORLD: http://10.0.0.12:82/server_setup/lobby-1/world.tar.gz
       REMOVE_OLD_MODS: true
       # Configs
       REPLACE_ENV_VARIABLES: "TRUE"
@@ -53,7 +53,7 @@ services:
       CFG_DB_REDIS_USERNAME: "default"
       CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
     volumes:
-      - ./data/lobby_1/config:/config
+      - ./data/lobby-1/config:/config
     restart: always
 
 secrets:

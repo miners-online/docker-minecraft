@@ -1,0 +1,2 @@
+https://cdn.modrinth.com/data/Vebnzrzj/versions/vtXGoeps/LuckPerms-Velocity-5.4.145.jar
+https://cdn.modrinth.com/data/9eGKb6K1/versions/NeIJv4rE/voicechat-velocity-2.5.28.jar

@@ -1,0 +1,65 @@
+services:
+  proxy:
+    image: itzg/mc-proxy:latest
+    ports:
+      - "0.0.0.0:25565:25565"
+      - "0.0.0.0:25565:25565/udp"
+    environment:
+      TYPE: "VELOCITY"
+      VELOCITY_VERSION: "latest"
+      MEMORY: "512M"
+      USE_AIKAR_FLAGS: true
+      ICON: "https://github.com/miners-online/.github/blob/main/profile/logos/favicon-64x64.png?raw=true"
+      PLUGINS_FILE: /extras/plugins.txt
+      # Configs
+      REPLACE_ENV_VARIABLES: "TRUE"
+      ENV_VARIABLE_PREFIX: "CFG_"
+      CFG_DB_HOST: "10.0.0.143:3306"
+      CFG_DB_NAME: "minecraft_permissions"
+      CFG_DB_USERNAME: "minecraft"
+      CFG_DB_PASSWORD_FILE: "/run/secrets/db_password"
+      CFG_DB_REDIS_HOST: "10.0.0.143:6379"
+      CFG_DB_REDIS_USERNAME: "default"
+      CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
+      CFG_FORWARDING_SECRET_FILE: "/run/secrets/forwarding_secret"
+    volumes:
+      - configs/proxy:/config
+      - config/proxy/plugins.txt:/extras/plugins.txt
+      - config/proxy/forwarding.secret:/server/forwarding.secret
+      - config/proxy/velocity.toml:/server/velocity.toml
+    restart: always
+
+  lobby_1:
+    image: itzg/minecraft-server:latest
+    environment:
+      EULA: TRUE
+      TYPE: "NEOFORGE"
+      VERSION: "1.21.1"
+      MEMORY: "1024M"
+      DIFFICULTY: peaceful
+      USE_AIKAR_FLAGS: true
+      ONLINE_MODE: false
+      MODPACK: http://10.0.0.12:82/server_setup/lobby_1/mods.zip
+      WORLD: http://10.0.0.12:82/server_setup/lobby_1/world.zip
+      REMOVE_OLD_MODS: true
+      # Configs
+      REPLACE_ENV_VARIABLES: "TRUE"
+      ENV_VARIABLE_PREFIX: "CFG_"
+      CFG_DB_HOST: "10.0.0.143:3306"
+      CFG_DB_NAME: "minecraft_permissions"
+      CFG_DB_USERNAME: "minecraft"
+      CFG_DB_PASSWORD_FILE: "/run/secrets/db_password"
+      CFG_DB_REDIS_HOST: "10.0.0.143:6379"
+      CFG_DB_REDIS_USERNAME: "default"
+      CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
+    volumes:
+      - configs/lobby_1:/data/config
+    restart: always
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.secret
+  db_redis_password:
+    file: ./secrets/db_redis_password.secret
+  forwarding_secret:
+    file: ./secrets/forwarding.secret

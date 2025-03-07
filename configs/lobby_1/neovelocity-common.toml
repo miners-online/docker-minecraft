@@ -1,0 +1,2 @@
+#The Forwarding secret of your velocity proxy
+forwarding-secret = '${CFG_FORWARDING_SECRET}'

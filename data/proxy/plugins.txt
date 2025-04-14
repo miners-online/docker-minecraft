@@ -1,2 +1,4 @@
 https://cdn.modrinth.com/data/Vebnzrzj/versions/vtXGoeps/LuckPerms-Velocity-5.4.145.jar
 https://cdn.modrinth.com/data/9eGKb6K1/versions/NeIJv4rE/voicechat-velocity-2.5.28.jar
+https://cdn.modrinth.com/data/P1OZGk5p/versions/qDaavkC8/ViaVersion-5.3.3-SNAPSHOT.jar
+https://cdn.modrinth.com/data/NpvuJQoq/versions/cuDXYAU7/ViaBackwards-5.3.2.jar

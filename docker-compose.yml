@@ -33,7 +33,8 @@ services:
     image: itzg/minecraft-server:latest
     environment:
       EULA: TRUE
-      TYPE: "NEOFORGE"
+      TYPE: "CUSTOM"
+      CUSTOM_SERVER: "http://10.0.0.12:82/server_setup/lobby-1/server.jar"
       VERSION: "1.21.1"
       MEMORY: "1024M"
       DIFFICULTY: peaceful
@@ -52,6 +53,7 @@ services:
       CFG_DB_REDIS_HOST: "10.0.0.143:6379"
       CFG_DB_REDIS_USERNAME: "default"
       CFG_DB_REDIS_PASSWORD_FILE: "/run/secrets/db_redis_password"
+      CFG_FORWARDING_SECRET_FILE: "/run/secrets/forwarding_secret"
     volumes:
       - ./data/lobby-1/config:/config
     restart: always

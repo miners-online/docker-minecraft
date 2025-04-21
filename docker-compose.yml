@@ -46,5 +46,5 @@ services:
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
     volumes:
-      - ./data/lobby-1/config:/config
+      - ./data/lobby-1:/config
     restart: always

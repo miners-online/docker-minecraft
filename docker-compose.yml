@@ -27,6 +27,7 @@ services:
     volumes:
       - ./data/proxy/config:/config
       - ./data/proxy/plugins.txt:/extras/plugins.txt
+      - ./data/proxy/forwarding.secret.yml:/config/forwarding.secret.yml
       - ./data/proxy/velocity.toml:/server/velocity.toml:rw
     restart: always
 

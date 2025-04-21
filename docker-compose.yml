@@ -20,7 +20,7 @@ services:
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
     volumes:
-      - ./data/proxy/config:/config
+      - ./data/proxy:/config
       - ./data/proxy/plugins.txt:/extras/plugins.txt
       - ./data/proxy/forwarding.secret.yml:/config/forwarding.secret.yml
       - ./data/proxy/velocity.toml:/server/velocity.toml:rw

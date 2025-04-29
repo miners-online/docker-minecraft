@@ -1,0 +1,37 @@
+services:
+  lobby:
+    image: itzg/minecraft-server:latest
+    env_file:
+      - ../../../.env
+    environment:
+      EULA: "TRUE"
+      TYPE: "VELOCITY"
+      VERSION: "1.21.5"
+      MEMORY: "1024M"
+      DIFFICULTY: peaceful
+      USE_AIKAR_FLAGS: "true"
+      ONLINE_MODE: "false"
+      WORLD: http://10.0.0.12:82/server_setup/lobby-1/world.zip
+      REMOVE_OLD_MODS: "true"
+      # Configs
+      REPLACE_ENV_VARIABLES: "TRUE"
+      ENV_VARIABLE_PREFIX: "CFG_"
+      CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
+      APPLY_VELOCITY_RCON: "true"
+    labels:
+      - "velocity.enable=true"
+      - "velocity.port=25565"
+      - "velocity.group=lobby"
+    volumes:
+      - ./data/lobby:/config
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+    networks:
+      - minecraft
+
+networks:
+  proxy:
+    external: true
+    name: minecraft

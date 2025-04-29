@@ -2,10 +2,14 @@
 
 Docker configs for starting the Miners Online network
 
-# Secrets:
+## Create network first:
 
-You must create these files!
+`docker network create --driver overlay --attachable minecraft`
 
-- `/secrets/db_password.secret`: The SQL database password
-- `/secrets/db_redis_password.secret`: The Redis database password
-- `/secrets/forwarding.secret`: The Velocity forwarding secret
+## Create env files:
+
+There are two required one in, `/services/games` and `/services/proxy`.
+
+```
+FORWARDING_SECRET=<your secret>
+```

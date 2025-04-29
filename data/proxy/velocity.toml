@@ -72,7 +72,7 @@ enable-player-address-logging = true
 [servers]
 # Configure your servers here. Each key represents the server's name, and the value
 # represents the IP address of the server to connect to.
-lobby-1 = "lobby-1:25565"
+lobby-1 = "minecraft_lobby.1:25565"
 modded-creative = "10.0.0.12:25566"
 modded-survival = "10.0.0.12:25567"
 testing = "testing:25565"

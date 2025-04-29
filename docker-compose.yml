@@ -34,7 +34,7 @@ services:
     env_file:
       - ./.env
     environment:
-      EULA: TRUE
+      EULA: "TRUE"
       TYPE: "CUSTOM"
       CUSTOM_SERVER: "http://10.0.0.12:82/server_setup/lobby-1/server.jar"
       VERSION: "1.21.1"

@@ -41,7 +41,6 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      endpoint_mode: host
 
   lobby:
     image: itzg/minecraft-server:latest

@@ -46,6 +46,7 @@ services:
 
   lobby:
     image: itzg/minecraft-server:latest
+    hostname: "{{.Service.Name}}-{{.Task.Slot}}" 
     env_file:
       - ./.env
     environment:

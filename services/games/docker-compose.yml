@@ -5,8 +5,9 @@ services:
       - ./.env
     environment:
       EULA: "TRUE"
-      TYPE: "VELOCITY"
-      VERSION: "1.21.5"
+      TYPE: "CUSTOM"
+      CUSTOM_SERVER: "http://10.0.0.12:82/server_setup/lobby-1/server.jar"
+      VERSION: "1.21.1"
       MEMORY: "1024M"
       DIFFICULTY: peaceful
       USE_AIKAR_FLAGS: "true"
@@ -17,7 +18,6 @@ services:
       REPLACE_ENV_VARIABLES: "TRUE"
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
-      APPLY_VELOCITY_RCON: "true"
     labels:
       - "velocity.enable=true"
       - "velocity.port=25565"

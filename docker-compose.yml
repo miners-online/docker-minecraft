@@ -10,7 +10,7 @@ services:
       - ./.env
     environment:
       TYPE: "CUSTOM"
-      BUNGEE_JAR_URL: "http://10.0.0.12:82/server_setup/proxy/server.jar"
+      BUNGEE_JAR_FILE: "/config/server.jar"
       VELOCITY_VERSION: "latest"
       MEMORY: "512M"
       USE_AIKAR_FLAGS: "true"
@@ -49,6 +49,7 @@ services:
       REPLACE_ENV_VARIABLES: "TRUE"
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
+      APPLY_VELOCITY_RCON: "true"
     volumes:
       - ./data/lobby-1:/config
     deploy:

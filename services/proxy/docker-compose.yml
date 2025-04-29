@@ -1,7 +1,6 @@
 services:
   proxy:
     image: itzg/mc-proxy:latest
-    user: "1000:1000"
     restart: unless-stopped
     group_add:
       - "990"

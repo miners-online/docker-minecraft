@@ -20,6 +20,7 @@ services:
         published: 19132
         protocol: udp
         mode: host
+    user: "0:0"
     env_file:
       - ./.env
     environment:

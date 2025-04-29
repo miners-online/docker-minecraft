@@ -45,7 +45,7 @@ services:
       - ./data/forwarding.secret.yml:/config/forwarding.secret.yml
       - ./data/velocity.toml:/server/velocity.toml:rw
       - ./run-bungeecord.sh:/run-bungeecord.sh:ro
-    entrypoint: ["/run-bungeecord.sh"]
+    entrypoint: ["chmod +x /run-bungeecord.sh && /run-bungeecord.sh"]
     networks:
       - minecraft
 

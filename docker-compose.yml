@@ -28,7 +28,6 @@ services:
 
   lobby:
     image: itzg/minecraft-server:latest
-    scale: 2
     env_file:
       - ./.env
     environment:
@@ -48,4 +47,7 @@ services:
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
     volumes:
       - ./data/lobby-1:/config
-    restart: always
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any

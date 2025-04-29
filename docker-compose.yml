@@ -40,10 +40,10 @@ services:
       VERSION: "1.21.1"
       MEMORY: "1024M"
       DIFFICULTY: peaceful
-      USE_AIKAR_FLAGS: true
-      ONLINE_MODE: false
+      USE_AIKAR_FLAGS: "true"
+      ONLINE_MODE: "false"
       WORLD: http://10.0.0.12:82/server_setup/lobby-1/world.zip
-      REMOVE_OLD_MODS: true
+      REMOVE_OLD_MODS: "true"
       # Configs
       REPLACE_ENV_VARIABLES: "TRUE"
       ENV_VARIABLE_PREFIX: "CFG_"

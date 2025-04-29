@@ -46,7 +46,6 @@ services:
 
   lobby:
     image: itzg/minecraft-server:latest
-    hostname: "{{.Service.Name}}-{{.Task.Slot}}" 
     env_file:
       - ./.env
     environment:
@@ -65,6 +64,10 @@ services:
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
       APPLY_VELOCITY_RCON: "true"
+    labels:
+      - "velocity.enable=true"
+      - "velocity.port=25565"
+      - "velocity.group=lobby"
     volumes:
       - ./data/lobby-1:/config
     deploy:

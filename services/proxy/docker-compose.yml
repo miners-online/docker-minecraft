@@ -2,6 +2,7 @@ services:
   proxy:
     image: itzg/mc-proxy:latest
     restart: unless-stopped
+    user: "1000:1000"
     group_add:
       - "990"
     healthcheck:

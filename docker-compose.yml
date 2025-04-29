@@ -1,6 +1,9 @@
 services:
   proxy:
     image: itzg/mc-proxy:latest
+    user: "1000:1000"
+    group_add:
+      - "990"
     healthcheck:
       test: ["NONE"]
     ports:
@@ -20,7 +23,6 @@ services:
         published: 19132
         protocol: udp
         mode: host
-    user: "0:0"
     env_file:
       - ./.env
     environment:
@@ -35,8 +37,6 @@ services:
       REPLACE_ENV_VARIABLES: "TRUE"
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
-      UID: "0"
-      GID: "0"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data/proxy:/config

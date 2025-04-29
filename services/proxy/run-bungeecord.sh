@@ -28,6 +28,8 @@ RCON_JAR_URL=https://github.com/orblazer/bungee-rcon/releases/download/v${RCON_J
 RCON_VELOCITY_JAR_URL=https://mvn.tribufu.com/releases/com/tribufu/Tribufu-VelocityRcon/${RCON_VELOCITY_JAR_VERSION}/Tribufu-VelocityRcon-${RCON_VELOCITY_JAR_VERSION}.jar
 download_required=true
 
+mkdir -p "$BUNGEE_HOME"
+
 set -eo pipefail
 
 function isTrue() {
@@ -480,8 +482,5 @@ if isTrue "${ENABLE_JMX}"; then
   log "JMX is enabled. Make sure you have port forwarding for ${JMX_PORT}"
 fi
 
-if [ $UID == 0 ]; then
-  exec sudo -E -u bungeecord "$JAVA_HOME/bin/java" $JVM_XX_OPTS $JVM_OPTS -jar "$BUNGEE_JAR" "$@"
-else
-  exec "$JAVA_HOME/bin/java" $JVM_XX_OPTS $JVM_OPTS -jar "$BUNGEE_JAR" "$@"
-fi
+cd "$BUNGEE_HOME"
+exec "$JAVA_HOME/bin/java" $JVM_XX_OPTS $JVM_OPTS -jar "$BUNGEE_JAR" "$@"

@@ -23,15 +23,10 @@
 : "${MODRINTH_ALLOWED_VERSION_TYPE:=release}"
 : "${CUSTOM_FAMILY:=bungeecord}"
 
-BUNGEE_HOME=/server
+BUNGEE_HOME=/host
 RCON_JAR_URL=https://github.com/orblazer/bungee-rcon/releases/download/v${RCON_JAR_VERSION}/bungee-rcon-${RCON_JAR_VERSION}.jar
 RCON_VELOCITY_JAR_URL=https://mvn.tribufu.com/releases/com/tribufu/Tribufu-VelocityRcon/${RCON_VELOCITY_JAR_VERSION}/Tribufu-VelocityRcon-${RCON_VELOCITY_JAR_VERSION}.jar
 download_required=true
-
-# fix permissions
-if [ $UID == 0 ]; then
-  chown -R bungeecord:bungeecord $BUNGEE_HOME
-fi
 
 set -eo pipefail
 
@@ -146,10 +141,6 @@ function genericPacks() {
   log "Applying generic pack ..."
   cp -R -f "${base_dir}"/* "${BUNGEE_HOME}"
   rm -rf $original_base_dir
-
-  if [ $UID == 0 ]; then
-    chown -R bungeecord:bungeecord "${BUNGEE_HOME}"
-  fi
 }
 
 function getResourceFromSpiget() {
@@ -205,9 +196,6 @@ function processConfigs {
   if [ -f /var/run/default-config.yml ] && [ ! -f $BUNGEE_HOME/config.yml ]; then
       log "Installing default configuration"
       cp /var/run/default-config.yml $BUNGEE_HOME/config.yml
-      if [ $UID == 0 ]; then
-          chown bungeecord: $BUNGEE_HOME/config.yml
-      fi
   fi
 
   # Replace environment variables in config files
@@ -465,10 +453,6 @@ elif [[ "${family}" == "bungeecord" ]] || isTrue "${APPLY_BUNGEECORD_RCON:-false
 fi
 
 processConfigs
-
-if [ $UID == 0 ]; then
-  chown -R bungeecord:bungeecord $BUNGEE_HOME
-fi
 
 if [[ ${INIT_MEMORY} || ${MAX_MEMORY} ]]; then
   log "Setting initial memory to ${INIT_MEMORY:=${MEMORY}} and max to ${MAX_MEMORY:=${MEMORY}}"

@@ -2,10 +2,22 @@ services:
   proxy:
     image: itzg/mc-proxy:latest
     ports:
-      - "0.0.0.0:25565:25565"
-      - "0.0.0.0:25565:25565/udp"
-      - "0.0.0.0:19132:19132"
-      - "0.0.0.0:19132:19132/udp"
+      - target: 25565
+        published: 25565
+        protocol: tcp
+        mode: host
+      - target: 25565
+        published: 25565
+        protocol: udp
+        mode: host
+      - target: 19132
+        published: 19132
+        protocol: tcp
+        mode: host
+      - target: 19132
+        published: 19132
+        protocol: udp
+        mode: host
     env_file:
       - ./.env
     environment:
@@ -29,6 +41,7 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      endpoint_mode: host
 
   lobby:
     image: itzg/minecraft-server:latest

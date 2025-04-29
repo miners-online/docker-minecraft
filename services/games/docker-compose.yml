@@ -32,6 +32,6 @@ services:
       - minecraft
 
 networks:
-  proxy:
+  minecraft:
     external: true
     name: minecraft

@@ -2,7 +2,7 @@ services:
   lobby:
     image: itzg/minecraft-server:latest
     env_file:
-      - ../../.env
+      - ./.env
     environment:
       EULA: "TRUE"
       TYPE: "VELOCITY"

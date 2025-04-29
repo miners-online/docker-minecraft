@@ -24,7 +24,7 @@ services:
         protocol: udp
         mode: host
     env_file:
-      - ../../.env
+      - ./.env
     environment:
       TYPE: "CUSTOM"
       BUNGEE_JAR_FILE: "/config/server.jar"

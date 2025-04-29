@@ -12,7 +12,7 @@ services:
       TYPE: "VELOCITY"
       VELOCITY_VERSION: "latest"
       MEMORY: "512M"
-      USE_AIKAR_FLAGS: true
+      USE_AIKAR_FLAGS: "true"
       ICON: "https://github.com/miners-online/.github/blob/main/profile/logos/favicon-64x64.png?raw=true"
       PLUGINS_FILE: /extras/plugins.txt
       # Configs

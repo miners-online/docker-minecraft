@@ -2,10 +2,10 @@ set -a
 . ./.env
 set +a
 
-cd proxy
+cd services/proxy
 docker compose up -d
-cd ..
+cd ../../
 
-cd games
+cd services/games
 docker stack deploy --compose-file docker-compose.yml minecraft
-cd ..
+cd ../../

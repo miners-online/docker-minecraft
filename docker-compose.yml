@@ -35,6 +35,7 @@ services:
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./data/proxy:/config
       - ./data/proxy/plugins.txt:/extras/plugins.txt
       - ./data/proxy/forwarding.secret.yml:/config/forwarding.secret.yml

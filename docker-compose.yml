@@ -1,6 +1,8 @@
 services:
   proxy:
     image: itzg/mc-proxy:latest
+    healthcheck:
+      test: ["NONE"]
     ports:
       - target: 25565
         published: 25565

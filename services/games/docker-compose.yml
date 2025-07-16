@@ -6,7 +6,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "CUSTOM"
-      CUSTOM_SERVER: "http://10.0.0.12:82/server_setup/lobby-1/game-lobby-4e8a6a3-20250716.181716-1.jar"
+      CUSTOM_SERVER: "http://10.0.0.12:82/server_setup/lobby-1/server.jar"
       VERSION: "1.21.1"
       MEMORY: "1024M"
       DIFFICULTY: peaceful

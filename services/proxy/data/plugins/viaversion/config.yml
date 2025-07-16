@@ -49,8 +49,8 @@ velocity-ping-save: true
 # You can find protocol ids on https://minecraft.wiki/w/Protocol_version
 # It will fall back to the default option if none found.
 velocity-servers:
-  default: 769
-  lobby: 769
+  default: 772
+  lobby: 772
   modded-creative: 767
 #
 #----------------------------------------------------------#

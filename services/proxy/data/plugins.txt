@@ -3,4 +3,4 @@ https://cdn.modrinth.com/data/P1OZGk5p/versions/OYkGD4xF/ViaVersion-5.4.2-SNAPSH
 https://cdn.modrinth.com/data/NpvuJQoq/versions/XEd4bGQa/ViaBackwards-5.4.2-SNAPSHOT.jar
 https://cdn.modrinth.com/data/wKkoqHrH/versions/brxg53Pw/Geyser-Velocity.jar
 https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/velocity
-http://10.0.0.12:82/server_setup/proxy/ProxyCore-1.0-SNAPSHOT.jar
+http://archives.internal/server_setup/proxy/ProxyCore-1.0-SNAPSHOT.jar

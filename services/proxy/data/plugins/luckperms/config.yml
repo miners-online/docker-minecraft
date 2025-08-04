@@ -85,14 +85,14 @@ data:
   # - The standard DB engine port is used by default
   #   (MySQL: 3306, PostgreSQL: 5432, MongoDB: 27017)
   # - Specify as "host:port" if differs
-  address: '${CFG_DB_HOST}'
+  address: 'mariadb:3306'
 
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
-  database: '${CFG_DB_NAME}'
+  database: 'luckperms'
 
   # Credentials for the database.
-  username: '${CFG_DB_USERNAME}'
+  username: 'luckperms'
   password: '${CFG_DB_PASSWORD}'
 
   # These settings apply to the MySQL connection pool.
@@ -254,9 +254,9 @@ broadcast-received-log-entries: false
 # Multiple Redis nodes can be specified in the same format as a string list under the name "addresses".
 redis:
   enabled: true
-  address: '${CFG_DB_REDIS_HOST}'
-  username: '${CFG_DB_REDIS_USERNAME}'
-  password: '${CFG_DB_REDIS_PASSWORD}'
+  address: 'redis:6379'
+  username: ''
+  password: ''
 
 # Settings for Nats.
 # Port 4222 is used by default; set address to "host:port" if differs

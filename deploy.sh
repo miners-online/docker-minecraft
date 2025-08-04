@@ -1,3 +1,7 @@
+cd services/infra
+docker compose up -d
+cd ../../
+
 cd services/proxy
 docker compose up -d
 cd ../../

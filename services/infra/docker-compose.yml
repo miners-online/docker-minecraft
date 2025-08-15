@@ -40,7 +40,7 @@ services:
         protocol: udp
         mode: host
     volumes:
-      - ./ingress.yml:/config/config.yml:ro
+      - ./ingress.yml:/config.yml:ro
     networks:
       - minecraft
 

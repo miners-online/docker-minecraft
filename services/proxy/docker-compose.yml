@@ -6,14 +6,6 @@ services:
     healthcheck:
       test: ["NONE"]
     ports:
-      - target: 25565
-        published: 25565
-        protocol: tcp
-        mode: host
-      - target: 25565
-        published: 25565
-        protocol: udp
-        mode: host
       - target: 19132
         published: 19132
         protocol: tcp

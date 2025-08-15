@@ -73,9 +73,9 @@ enable-player-address-logging = true
 # Configure your servers here. Each key represents the server's name, and the value
 # represents the IP address of the server to connect to.
 null-island = "0.0.0.0:1"
-modded-creative = "10.0.0.12:25566"
-modded-survival = "10.0.0.12:25567"
-testing = "testing:25565"
+# modded-creative = "10.0.0.12:25566"
+# modded-survival = "10.0.0.12:25567"
+# testing = "testing:25565"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
 try = [
@@ -109,7 +109,7 @@ read-timeout = 30000
 
 # Enables compatibility with HAProxy's PROXY protocol. If you don't know what this is for, then
 # don't enable it.
-haproxy-protocol = false
+haproxy-protocol = true
 
 # Enables TCP fast open support on the proxy. Requires the proxy to run on Linux.
 tcp-fast-open = false

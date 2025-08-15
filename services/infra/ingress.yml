@@ -80,6 +80,9 @@ config:
           version:
             name: '§cTry again later!'
             protocol: -1
+      - host: 'minersonline.uk'
+        backend: proxy:25565
+        proxyProtocol: true
       - host: '*.minersonline.uk'
         backend: proxy:25565
         proxyProtocol: true # Use proxy protocol to connect to backend.

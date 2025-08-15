@@ -58,6 +58,13 @@ config:
         # before forwarding the connection to the backend.
         # Default: false
         modifyVirtualHost: true
+        fallback:
+          motd: |
+            §cModded Creative server is offline.
+            §eCheck back later!
+          version:
+            name: '§cTry again later!'
+            protocol: -1
       - host: [ "modded-survival.mc.minersonline.uk" ]
         backend: [ 10.0.0.12:25567 ]
         # Ping responses are cached per backend address by default.
@@ -70,19 +77,26 @@ config:
         # before forwarding the connection to the backend.
         # Default: false
         modifyVirtualHost: true
-      # Match all as last item routes any other host to a default backend.
-      - host: '*'
-        backend: proxy:25565
-        proxyProtocol: true # Use proxy protocol to connect to backend.
         fallback:
-          motd: §eNo server available for this host.
+          motd: |
+            §cModded Survival server is offline.
+            §eCheck back later!
           version:
-            name: §eTry minersonline.uk
+            name: '§cTry again later!'
             protocol: -1
-          #players:
-          #  online: 0
-          #  max: 1000
-          #favicon: server-icon.png
+      # # Match all as last item routes any other host to a default backend.
+      # - host: '*'
+      #   backend: proxy:25565
+      #   proxyProtocol: true # Use proxy protocol to connect to backend.
+      #   fallback:
+      #     motd: §eNo server available for this host.
+      #     version:
+      #       name: §eTry minersonline.uk
+      #       protocol: -1
+      #     #players:
+      #     #  online: 0
+      #     #  max: 1000
+      #     #favicon: server-icon.png
 
   # The follow settings from standard Gate also apply to Lite mode.
   #

@@ -1,21 +1,4 @@
 services:
-  mariadb:
-    image: mariadb:latest
-    user: "977:988"
-    restart: unless-stopped
-    ports:
-      - "3306:3306"
-    env_file:
-      - ./.env
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: luckperms
-      MYSQL_USER: luckperms
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - /mnt/server-storage/minecraft/db:/var/lib/mysql
-    networks:
-      - minecraft
   redis:
     image: redis:latest
     user: "977:988"

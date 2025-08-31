@@ -1,1 +1,0 @@
-secret: "${CFG_FORWARDING_SECRET}"

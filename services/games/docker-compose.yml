@@ -5,25 +5,25 @@ services:
       - ./.env
     environment:
       EULA: "TRUE"
-      TYPE: "CUSTOM"
-      CUSTOM_SERVER: "http://archives.internal/server_setup/lobby-1/server.jar"
-      VERSION: "1.21.1"
-      MEMORY: "1024M"
+      TYPE: "PAPER"
+      VERSION: "1.21.8"
+      MEMORY: "3G"
       DIFFICULTY: peaceful
       USE_AIKAR_FLAGS: "true"
       ONLINE_MODE: "false"
-      WORLD: http://archives.internal/server_setup/lobby-1/world.zip
       REMOVE_OLD_MODS: "true"
+      GENERIC_PACKS: common,lobby
+      GENERIC_PACKS_PREFIX: http://archives.internal/server_setup/
+      GENERIC_PACKS_SUFFIX: .zip
       # Configs
       REPLACE_ENV_VARIABLES: "TRUE"
       ENV_VARIABLE_PREFIX: "CFG_"
       CFG_FORWARDING_SECRET: ${FORWARDING_SECRET}
+      CFG_LUCKPERMS_SERVER: lobby
     labels:
       - "velocity.enable=true"
       - "velocity.port=25565"
       - "velocity.group=lobby"
-    volumes:
-      - ./data/lobby:/config
     deploy:
       replicas: 2
       restart_policy:

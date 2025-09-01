@@ -92,7 +92,7 @@ config:
             name: '§cTry again later!'
             protocol: -1
       - host: '*minersonline.uk'
-        backend: proxy:25565
+        backend: 10.0.0.12:25565
         proxyProtocol: true # Use proxy protocol to connect to backend.
         # tcpShieldRealIP: true # Optionally you can also use TCPShield's RealIP protocol.
       # # Match all as last item routes any other host to a default backend.

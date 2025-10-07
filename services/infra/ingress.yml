@@ -53,6 +53,17 @@ config:
           version:
             name: '§cTry again later!'
             protocol: -1
+      - host: [ "build.mc.minersonline.uk" ]
+        backend: [ 10.0.0.12:25569 ]
+        cachePingTTL: 60s
+        modifyVirtualHost: true
+        fallback:
+          motd: |
+            §cBuild server is offline.
+            §eCheck back later!
+          version:
+            name: '§cTry again later!'
+            protocol: -1
       - host: [ "modded-creative.mc.minersonline.uk" ]
         backend: [ 10.0.0.12:25566 ]
         # Ping responses are cached per backend address by default.
